@@ -1,0 +1,119 @@
+body {
+    margin: 35px auto;
+    background-image: url(./91OTtJUf1JL._AC_SL1500_.jpg);
+    /* border: 2px solid red; */
+}
+
+.main-game {
+    background-color: gray;
+    margin: auto;
+    max-width: 800px;
+}
+
+.main-title {
+    text-shadow: 5px 5px #AAAAAA;
+    font-size: 35px;
+    text-align: center;
+    /* border: 2px solid red; */
+    font-family: 'Harry Potter', sans-serif;                                             
+}
+
+.main-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    margin: 0px;
+    margin-top: 8px;
+    /* border: 2px solid red; */
+    
+}
+
+.score-div {
+    margin: 5px;
+    text-align: center;
+    border: 3px solid lightgrey;
+    border-radius: 10%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    background-color:black;
+    color:lightgray;
+    /* padding-bottom: 23px; */
+}
+
+.score-title {
+    font-size: 25px;
+    margin: 6px;
+    /* border: 2px solid red; */
+}
+
+.score {
+    font-size: 25px;
+    margin: 0px;
+    /* border: 2px solid red; */
+}
+
+.question-container {
+    text-align: center;
+    border: 2px solid red;
+}
+
+.answers-container {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    height: 70px;
+    font-size: 30px;
+    margin: 15px;
+}
+
+.option1 {
+    background-color: #AE0001;
+    border: 5px solid #D3A625;
+    border-radius: 25%;
+}
+
+.option2 {
+    background-color: #2A623D;
+    border: 5px solid #AAAAAA;
+    border-radius: 25%;
+}
+
+.option3 {
+    color: darkgray;
+    background-color: #222F5B;
+    border: 5px solid #5D5D5D;
+    border-radius: 25%;
+}
+
+.option4 {
+    background-color: #FFDB00;
+    border: 5px solid ##000000;
+    border-radius: 25%;
+}
+
+.buttons {
+    height: 60px;
+    text-align: center;
+    /* border: 2px solid red; */
+}
+
+.submit, .next {
+    font-size: 20px;
+    text-align: center;
+    height: 40px;
+    width: 85px;
+}
+
+/* .next {
+    font-size: 20px;
+    text-align: center;
+    height: 40px;
+    width: 85px;
+} */
