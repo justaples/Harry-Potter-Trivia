@@ -12,6 +12,7 @@ body {
     border: 5px solid black;
     border-radius: 5%;
     background-color: black;
+    border: 2px solid white;
     /* background-color: #070B34; */
     margin: auto;
     max-width: 800px;
@@ -77,7 +78,7 @@ h1 {
     /* border: 2px solid red; */
 }
 
-.answers-container {
+#answers-container {
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
