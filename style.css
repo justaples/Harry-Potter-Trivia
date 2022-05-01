@@ -9,6 +9,7 @@ body {
 }
 
 .main-game {
+    height: 750px;
     border: 5px solid black;
     border-radius: 5%;
     background-color: black;
@@ -78,6 +79,10 @@ h1 {
     /* border: 2px solid red; */
 }
 
+h2 {
+    text-align: center;
+}
+
 #answers-container {
     /* border: 2px solid red; */
     display: flex;
@@ -144,13 +149,13 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     height: 60px;
     text-align: center;
     /* border: 2px solid red; */
 }
 
-
-.submit, .next {
+.next {
     background-color: black;
     color: white;
     font-size: 20px;
@@ -165,3 +170,15 @@ h1 {
     background-color: gray;
 }
 
+.hide{
+    display: none;
+}
+
+#final {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    height: 50px;
+    /* border: 2px solid red; */
+}

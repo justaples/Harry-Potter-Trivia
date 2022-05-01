@@ -6,6 +6,8 @@ let getAnswer2 = document.querySelector('.option2');
 let getAnswer3 = document.querySelector('.option3');
 let getAnswer4 = document.querySelector('.option4');
 let getNext = document.querySelector('.next');
+let finalMessage = document.querySelector('.final-message');
+let final = document.querySelector('#final');
 
 let questionsAndAnswers = [
     {
@@ -25,44 +27,75 @@ let questionsAndAnswers = [
     },   
     {
         question:'Who said this?: “I am good looking enough for both of us.',
-        options: ['Draco Malfoy','Ros Weasley','Fleur Delacour','Ginny Weasley'],
+        options: ['Draco Malfoy','Ron Weasley','Fleur Delacour','Ginny Weasley'],
         correctAnswer: 'Fleur Delacour'
-    }   
+    },   
+    {
+        question:'Which of these is NOT one of Albus Dumbledore’s middle names?',
+        options: ['Wulfric','Aurelius','Percival','Brian'],
+        correctAnswer: 'Aurelius'
+    },   
+    {
+        question:'Which dragon does Harry Potter face in the first task of the Triwizard Tournament?',
+        options: ['Swedish Short-Snout','Chinese Fireball','Common Welsh Green','Hungarian Horntail'],
+        correctAnswer: 'Hungarian Horntail'
+    },   
+    {
+        question:"What is Neville's Boggart?",
+        options: ['A snake','Snape','The Full Moon','His Grandmother'],
+        correctAnswer: 'Snape'
+    },   
+    {
+        question: "What is the name of Hagrid's Hippogriff?",
+        options: ['Scabbers','Pickett','Teddy','Buckbeak'],
+        correctAnswer: 'Buckbeak'
+    },   
+    {
+        question:"What was Lupin's nickname when he was a student?",
+        options: ['Padfoot','Moony','Prongs','Wormtail'],
+        correctAnswer: 'Moony'
+    },   
+    {
+        question:'What house is Cedric Diggory in?',
+        options: ['Gryffindor','Slytherin','Ravenclaw','Hufflepuff'],
+        correctAnswer: 'Hufflepuff'
+    },   
 ]
 
 let turn = 0;
 let removed = false;
 const handleClick = (e) => {
-    console.log(e.target.innerText)
-            console.log(questionsAndAnswers[turn].correctAnswer)
-            if(e.target.innerText === questionsAndAnswers[turn].correctAnswer){
-                getScore.innerHTML = `${parseInt(getScore.innerHTML) + 100}`;
-                // turn ++
-            }
-            getAnswers.forEach(item =>{
-                item.removeEventListener('click',
-                handleClick,false    
-                 )
-                })
-            // removed = true;
-        }
+    if(e.target.innerText === questionsAndAnswers[turn].correctAnswer){
+        final.innerHTML = "Correct!";
+        getScore.innerHTML = `${parseInt(getScore.innerHTML) + 100}`;
+        getNext.classList.remove('hide')
+        finalMessage.classList.remove('hide')    
+    }else{
+        final.innerHTML = "Wrong!";
+        finalMessage.style.alignItems = 'center';
+    }
+    getNext.classList.remove('hide')
+    finalMessage.classList.remove('hide')    
+    getAnswers.forEach(item =>{
+        item.removeEventListener('click',
+        handleClick,false    
+            )
+        })
+}
 
 const startTrivia = (turn) => {
     getAnswers.forEach(item => {
         item.addEventListener('click', 
-            handleClick
-            // },{once:true} ) 
-            
+        handleClick    
         ,{once:true})
     })
     if(removed){
         getAnswers.forEach(item =>{
-                item.removeEventListener('click',
-                handleClick,false    
-                 )
-                })
+            item.removeEventListener('click',
+            handleClick,false    
+            )
+        })
     }
-        // console.log('wrong')
 
     getQuestion.innerText = questionsAndAnswers[turn].question;
     getAnswer1.innerHTML = questionsAndAnswers[turn].options[0];
@@ -71,13 +104,13 @@ const startTrivia = (turn) => {
     getAnswer4.innerHTML = questionsAndAnswers[turn].options[3];
     }
 startTrivia(turn);
-console.log(turn)
 
 const showNextQuestion = () =>{
     getNext.addEventListener('click', e =>{
+        getNext.classList.add('hide')
+        finalMessage.classList.add('hide')
         turn ++
         startTrivia(turn)
-        console.log('clicked')
     })
 }
 showNextQuestion();
