@@ -12,6 +12,8 @@ let getEndPage = document.querySelector('.end-page');
 let getMainTop = document.querySelector('.main-top');
 let getMainTitle = document.querySelector('.main-title');
 let getFinalMessage = document.querySelector('.final-message');
+let getStartPage = document.querySelector('.start-page');
+let getStartBtn = document.querySelector('.start');
 
 let questionsAndAnswers = [
     {
@@ -71,7 +73,17 @@ let questionsAndAnswers = [
     },   
 ]
 
-let turn = 0;
+const startGame = () =>{
+    getStartBtn.addEventListener('click', e =>{
+        getStartPage.style.display = "none";
+        getStartPage.classList.add('hide');
+        getMainTop.classList.remove('hide');
+        getEndPage.classList.remove('hide');
+    })
+}
+startGame();
+
+let turn = 9;
 let removed = false;
 const handleClick = (e) => {
     if(e.target.innerText === questionsAndAnswers[turn].correctAnswer){
@@ -93,7 +105,7 @@ const handleClick = (e) => {
     })
 }
 
-const startTrivia = (turn) => {
+const playTrivia = (turn) => {
     getAnswers.forEach(item => {
         item.addEventListener('click', 
         handleClick    
@@ -112,24 +124,24 @@ const startTrivia = (turn) => {
     getAnswer3.innerHTML = questionsAndAnswers[turn].options[2];
     getAnswer4.innerHTML = questionsAndAnswers[turn].options[3];
     }
-startTrivia(turn);
+playTrivia(turn);
 
 const showNextQuestion = () =>{
     getNext.addEventListener('click', e =>{
         getNext.classList.add('hide')
         getResultContainer.classList.add('hide')
         turn ++
-        startTrivia(turn)
+        playTrivia(turn)
         console.log(turn)
         if(turn===10){
             getEndPage.classList.add('hide')
             getFinalMessage.classList.remove('hide')
             if(getScore.innerHTML >= 800){
-                getFinalMessage.innerHTML = "<h2>Congratulations<br>You're a Pure-blood Potterhead!!!</h2>"
+                getFinalMessage.innerHTML = "<h2>Congratulations<br>You're a Pure-Blood Potterhead!!!</h2>"
             }else if (getScore.innerHTML >=500 && getScore.innerHTML < 800){
-                getFinalMessage.innerHTML = "<h2>You are a half-blood Potterhead! <br>This calls for a Harry Potter movie marathon<br>to brush up on your knowledge!!</h2>"
+                getFinalMessage.innerHTML = "<h2>You are a Half-Blood Potterhead! <br>This calls for a Harry Potter movie marathon<br>to brush up on your knowledge!!</h2>"
             }else{
-                getFinalMessage.innerHTML = "<h2>You're a squib!<br>Try again.</h2>"
+                getFinalMessage.innerHTML = "<h2>You're a Squib!<br>Try again.</h2>"
             }
             getMainTop.style.display = "flex"
             getMainTop.style.flexDirection = "column"
