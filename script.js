@@ -6,8 +6,12 @@ let getAnswer2 = document.querySelector('.option2');
 let getAnswer3 = document.querySelector('.option3');
 let getAnswer4 = document.querySelector('.option4');
 let getNext = document.querySelector('.next');
-let finalMessage = document.querySelector('.final-message');
-let final = document.querySelector('#final');
+let getResultContainer = document.querySelector('.result-container');
+let showResult = document.querySelector('#result');
+let getEndPage = document.querySelector('.end-page');
+let getMainTop = document.querySelector('.main-top');
+let getMainTitle = document.querySelector('.main-title');
+let getFinalMessage = document.querySelector('.final-message');
 
 let questionsAndAnswers = [
     {
@@ -26,7 +30,7 @@ let questionsAndAnswers = [
         correctAnswer: 'Professor Binns'
     },   
     {
-        question:'Who said this?: “I am good looking enough for both of us.',
+        question:'Who said this?\n“I am good looking enough for both of us"',
         options: ['Draco Malfoy','Ron Weasley','Fleur Delacour','Ginny Weasley'],
         correctAnswer: 'Fleur Delacour'
     },   
@@ -60,27 +64,33 @@ let questionsAndAnswers = [
         options: ['Gryffindor','Slytherin','Ravenclaw','Hufflepuff'],
         correctAnswer: 'Hufflepuff'
     },   
+    {
+        question:'',
+        options: ['','','',''],
+        correctAnswer: ''
+    },   
 ]
 
 let turn = 0;
 let removed = false;
 const handleClick = (e) => {
     if(e.target.innerText === questionsAndAnswers[turn].correctAnswer){
-        final.innerHTML = "Correct!";
+        showResult.innerHTML = "Correct!";
         getScore.innerHTML = `${parseInt(getScore.innerHTML) + 100}`;
         getNext.classList.remove('hide')
-        finalMessage.classList.remove('hide')    
+        getResultContainer.classList.remove('hide')    
     }else{
-        final.innerHTML = "Wrong!";
-        finalMessage.style.alignItems = 'center';
+        showResult.innerHTML = "Wrong!";
+        getResultContainer.style.alignItems = 'center';
     }
+    
     getNext.classList.remove('hide')
-    finalMessage.classList.remove('hide')    
+    getResultContainer.classList.remove('hide')    
     getAnswers.forEach(item =>{
         item.removeEventListener('click',
         handleClick,false    
-            )
-        })
+        )
+    })
 }
 
 const startTrivia = (turn) => {
@@ -96,7 +106,6 @@ const startTrivia = (turn) => {
             )
         })
     }
-
     getQuestion.innerText = questionsAndAnswers[turn].question;
     getAnswer1.innerHTML = questionsAndAnswers[turn].options[0];
     getAnswer2.innerHTML = questionsAndAnswers[turn].options[1];
@@ -108,12 +117,31 @@ startTrivia(turn);
 const showNextQuestion = () =>{
     getNext.addEventListener('click', e =>{
         getNext.classList.add('hide')
-        finalMessage.classList.add('hide')
+        getResultContainer.classList.add('hide')
         turn ++
         startTrivia(turn)
+        console.log(turn)
+        if(turn===10){
+            getEndPage.classList.add('hide')
+            getFinalMessage.classList.remove('hide')
+            if(getScore.innerHTML >= 800){
+                getFinalMessage.innerHTML = "<h2>Congratulations<br>You're a Pure-blood Potterhead!!!</h2>"
+            }else if (getScore.innerHTML >=500 && getScore.innerHTML < 800){
+                getFinalMessage.innerHTML = "<h2>You are a half-blood Potterhead! <br>This calls for a Harry Potter movie marathon<br>to brush up on your knowledge!!</h2>"
+            }else{
+                getFinalMessage.innerHTML = "<h2>You're a squib!<br>Try again.</h2>"
+            }
+            getMainTop.style.display = "flex"
+            getMainTop.style.flexDirection = "column"
+            getMainTop.style.alignContent = "center"
+            getMainTop.style.alignItems = "center"
+            getMainTop.style.height = "730px"
+            getScore.style.fontSize = "150px"
+            getMainTitle.style.fontSize = "50px"
+            getMainTitle.style.color = "#eeba30"
+            getMainTitle.style.textShadow = "3px 3px #946b2d"
+        }
     })
 }
 showNextQuestion();
-
-
 
