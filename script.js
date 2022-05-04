@@ -1,4 +1,6 @@
 let getScore = document.querySelector('.score');
+let getScoreDiv = document.querySelector('.score-div');
+let getQuestionCounter = document.querySelector('.counter')
 let getQuestion = document.querySelector('.question');
 let getAnswers = document.querySelectorAll('.option');
 let getAnswer1 = document.querySelector('.option1');
@@ -14,6 +16,7 @@ let getMainTitle = document.querySelector('.main-title');
 let getFinalMessage = document.querySelector('.final-message');
 let getStartPage = document.querySelector('.start-page');
 let getStartBtn = document.querySelector('.start');
+let getHPTitle = document.querySelector('.hp-title');
 
 let questionsAndAnswers = [
     {
@@ -73,12 +76,31 @@ let questionsAndAnswers = [
     },   
 ]
 
+const audioStart = new Audio("./Sound effect/Hedwig-theme.mp3");
+audioStart.volume = 0.008;
+audioStart.loop = true;
+const audioAlohomora = new Audio('./Sound effect/Alohomora1.mp3');
+audioAlohomora.volume = 0.05
+const audioRight = new Audio('./Sound effect/10-points to gryffindor.mp3');
+audioRight.volume= 0.01;
+const audioWrong = new Audio('./Sound effect/Olivander.mp3');
+audioWrong.volume= 0.01;
+const audioEnd = new Audio('./Sound effect/End.mp3');
+audioEnd.volume = 0.1;
+
 const startGame = () =>{
     getStartBtn.addEventListener('click', e =>{
-        getStartPage.style.display = "none";
-        getStartPage.classList.add('hide');
-        getMainTop.classList.remove('hide');
-        getEndPage.classList.remove('hide');
+        
+        audioAlohomora.play();
+        setTimeout(function(){
+            setTimeout(function(){
+                audioStart.play()
+            },1200)
+            getStartPage.style.display = "none";
+            getStartPage.classList.add('hide');
+            getMainTop.classList.remove('hide');
+            getEndPage.classList.remove('hide');
+        },1500)
     })
 }
 startGame();
@@ -87,12 +109,14 @@ let turn = 9;
 let removed = false;
 const handleClick = (e) => {
     if(e.target.innerText === questionsAndAnswers[turn].correctAnswer){
-        showResult.innerHTML = "Correct!";
-        getScore.innerHTML = `${parseInt(getScore.innerHTML) + 100}`;
+        audioRight.play();
+        showResult.innerHTML = "Correct! 10 points to Gryffindor!";
+        getScore.innerHTML = `${parseInt(getScore.innerHTML) + 60}`;
         getNext.classList.remove('hide')
         getResultContainer.classList.remove('hide')    
     }else{
-        showResult.innerHTML = "Wrong!";
+        audioWrong.play();
+        showResult.innerHTML = "Nope, definitely not!!";
         getResultContainer.style.alignItems = 'center';
     }
     
@@ -118,6 +142,8 @@ const playTrivia = (turn) => {
             )
         })
     }
+    getQuestionCounter.innerHTML = `<h4>Question ${turn+1} out of 10</h4>`
+    getQuestionCounter.style.margin = "0px"
     getQuestion.innerText = questionsAndAnswers[turn].question;
     getAnswer1.innerHTML = questionsAndAnswers[turn].options[0];
     getAnswer2.innerHTML = questionsAndAnswers[turn].options[1];
@@ -134,11 +160,14 @@ const showNextQuestion = () =>{
         playTrivia(turn)
         console.log(turn)
         if(turn===10){
+            audioStart.pause()
+            audioEnd.play()
             getEndPage.classList.add('hide')
             getFinalMessage.classList.remove('hide')
-            if(getScore.innerHTML >= 800){
+            if(getScore.innerHTML >= 80){
                 getFinalMessage.innerHTML = "<h2>Congratulations<br>You're a Pure-Blood Potterhead!!!</h2>"
-            }else if (getScore.innerHTML >=500 && getScore.innerHTML < 800){
+            }else if (getScore.innerHTML >=50 && getScore.innerHTML < 80){
+                getFinalMessage.style.fontSize = "15px"
                 getFinalMessage.innerHTML = "<h2>You are a Half-Blood Potterhead! <br>This calls for a Harry Potter movie marathon<br>to brush up on your knowledge!!</h2>"
             }else{
                 getFinalMessage.innerHTML = "<h2>You're a Squib!<br>Try again.</h2>"
@@ -149,9 +178,14 @@ const showNextQuestion = () =>{
             getMainTop.style.alignItems = "center"
             getMainTop.style.height = "730px"
             getScore.style.fontSize = "150px"
+            getScoreDiv.style.margin = "100px"
+            getScoreDiv.style.marginTop = "60px"
             getMainTitle.style.fontSize = "50px"
             getMainTitle.style.color = "#eeba30"
             getMainTitle.style.textShadow = "3px 3px #946b2d"
+            getMainTitle.style.marginTop = "60px"
+            getHPTitle.style.fontSize = "65px"
+
         }
     })
 }

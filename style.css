@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 5px;
     /* border: 2px solid red; */
 }
 
@@ -64,6 +65,16 @@ h1 {
     /* border: 2px solid red; */
 }
 
+.question-and-count{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive;
+    /* border: 2px solid red; */
+}
+
 .question-container {
     font-family: 'Indie Flower', cursive;
     margin: 15px;
@@ -76,10 +87,6 @@ h1 {
     /* border: 2px solid red; */
 }
 
-h2 {
-    text-align: center;
-}
-
 #answers-container {
     /* border: 2px solid red; */
     display: flex;
@@ -90,11 +97,18 @@ h2 {
     font-family: 'Indie Flower', cursive;
     height: 70px;
     font-size: 30px;
-    margin: 15px;
+    margin: 10px;
     border-radius: 25%;
     color: white;
 }
 
+h4{
+    margin: 0px;
+}
+
+h2{
+    text-align: center;
+}
 
 .option1 {
     background-color: #AE0001;
@@ -172,7 +186,8 @@ h2 {
 }
 
 #result {
-    margin: 0;
+    margin: 0px;
+    margin-bottom: 0px;
     text-align: center;
     font-size: 30px;
     color: white;
@@ -200,6 +215,7 @@ h2 {
     align-self: center;
     text-align: center;
     color:white;
+    text-shadow: 3px 3px #9c0e0e;
     font-family: 'Harry Potter', sans-serif; 
     font-size: 40px;
     /* border: 2px solid red; */
@@ -208,9 +224,6 @@ h2 {
 .image{
     display: flex;
     align-self: center;
-    /* border: 2px solid red; */
-}
-.harry-glasses{
     /* border: 2px solid red; */
 }
 
@@ -228,10 +241,90 @@ h2 {
 
 .start:hover{
     border: 10px solid #D3A625;
-    box-shadow: 3px 3px 10px 10px #a27f1d;
+    box-shadow: 3px 3px 5px 5px #a27f1d;
 }
 
 .start-btn{
     margin: 5px;
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    
+    body{
+        margin: auto;
+        margin-bottom: 0;
+    }
+    .main-game {
+        margin-top: 35px;
+        max-width: 350px;
+        max-height: 700px;
+        border-radius: 10%;
+        box-shadow: 3px 3px 8px 8px #a27f1d;
+    }
+
+    .welcome-message{
+        font-size: 18px;
+    }
+
+    .start{
+        width: 120px;
+    }
+
+    .main-title {
+        font-size: 18px;
+    }
+    
+    .score{
+        font-size: 18px;
+    }
+    
+    .main-top{
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+    .question-container {
+        margin: 5px;
+        height: 90px;
+        font-size: 15px;
+    }
+
+    .option1{
+        margin: 3px 15px 3px 15px;
+        padding: 0px;
+    }
+    .option2{
+        margin: 3px 15px 3px 15px;
+        padding: 0px;
+    }
+    .option3{
+        margin: 3px 15px 3px 15px;
+        padding: 0px;
+    }
+    .option4{
+        margin: 3px 15px 3px 15px;
+        padding: 0px;
+    }
+
+    .result-container{
+        margin: 10px;
+        margin-bottom: 0px;
+    }
+
+    #result{
+        font-size: 25px;
+    }
+
+    .final-message{
+        font-size: 25px;
+    } 
+    
+    .hp-title{
+        font-size: 35px;
+    }
+
+    h2{
+        margin: 0px;
+    }
+  }
