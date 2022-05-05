@@ -1,7 +1,10 @@
+/*=======================================================================
+Adding general style to the divs added to the body 
+=======================================================================*/
+
 body {
     margin: 35px auto;
     background-color: #9b0101;
-    /* border: 2px solid red; */
 }
 
 .main-game {
@@ -17,10 +20,9 @@ body {
 
 .main-title {
     color: #C0C0C0;
-    text-shadow: 3px 3px #5a5a5a;
+    text-shadow: 3px 3px #886a17;
     font-size: 35px;
     text-align: center;
-    /* border: 2px solid red; */
     font-family: 'Harry Potter', sans-serif;                                             
 }
 
@@ -29,13 +31,11 @@ body {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 5px;
-    /* border: 2px solid red; */
 }
 
 h1 {
     margin: 0px;
     margin-top: 8px;
-    /* border: 2px solid red; */
     
 }
 
@@ -43,26 +43,22 @@ h1 {
     margin: 5px;
     text-align: center;
     border: 3px solid lightgrey;
-    /* border: 3px solid red; */
     border-radius: 10%;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
     background-color:black;
     color:lightgray;
-    /* padding-bottom: 23px; */
 }
 
 .score-title {
     font-size: 25px;
     margin: 6px;
-    /* border: 2px solid red; */
 }
 
 .score {
     font-size: 25px;
     margin: 0px;
-    /* border: 2px solid red; */
 }
 
 .question-and-count{
@@ -72,7 +68,6 @@ h1 {
     align-items: center;
     font-size: 25px;
     font-family: 'Indie Flower', cursive;
-    /* border: 2px solid red; */
 }
 
 .question-container {
@@ -84,11 +79,9 @@ h1 {
     color: white;
     height: 100px;
     font-size: 25px;
-    /* border: 2px solid red; */
 }
 
 #answers-container {
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
 }
@@ -109,6 +102,10 @@ h4{
 h2{
     text-align: center;
 }
+
+/*=======================================================================
+Adding style to each answer button separately and a hovr style for each option
+=======================================================================*/
 
 .option1 {
     background-color: #AE0001;
@@ -163,7 +160,6 @@ h2{
     align-items: center;
     height: 60px;
     text-align: center;
-    /* border: 2px solid red; */
 }
 
 .next {
@@ -181,6 +177,10 @@ h2{
     background-color: gray;
 }
 
+/*=======================================================================
+Adding display: none to the hide class to be applied later in JavaScript
+=======================================================================*/
+
 .hide{
     display: none;
 }
@@ -192,19 +192,16 @@ h2{
     font-size: 30px;
     color: white;
     height: 50px;
-    /* border: 2px solid red; */
 }
 
 .final-message{
     color: white;
     font-size: 25px;
     font-family: 'IM Fell English SC', serif;
-    /* border: 2px solid red; */
 } 
 
 .start-page{
     height: 750px; 
-    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -218,13 +215,11 @@ h2{
     text-shadow: 3px 3px #9c0e0e;
     font-family: 'Harry Potter', sans-serif; 
     font-size: 40px;
-    /* border: 2px solid red; */
 }
 
 .image{
     display: flex;
     align-self: center;
-    /* border: 2px solid red; */
 }
 
 .start{
@@ -236,7 +231,6 @@ h2{
     border-radius: 40%;
     color: black;
     font-size: 35px;
-    /* border: 2px solid red; */
 }
 
 .start:hover{
@@ -248,6 +242,28 @@ h2{
     margin: 5px;
     text-align: center;
 }
+
+.again{
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    margin: 0px;
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border: 5px solid #D3A625;
+    border-radius: 30%;
+    font-family: 'IM Fell English SC', serif;
+}
+
+.again:hover{
+    box-shadow: 3px 3px 5px 5px #ffcb3c;
+    background-color: rgb(244, 213, 213);
+}
+
+/*=======================================================================
+Adding style options for mobile devices with smaller screens 
+=======================================================================*/
 
 @media only screen and (max-width: 600px) {
     
@@ -278,7 +294,7 @@ h2{
     .score{
         font-size: 18px;
     }
-    
+      
     .main-top{
         margin-top: 30px;
         margin-bottom: 0px;
@@ -326,5 +342,12 @@ h2{
 
     h2{
         margin: 0px;
+    }
+
+    .again{
+        font-size: 20px;
+        width: 150px;
+        height: 30px;
+        border: 4px solid #D3A625;
     }
   }
