@@ -247,6 +247,7 @@ const showNextQuestion = () =>{
             /*=======================================================================
             Styling the end page using DOM manipulation, since all pages were done using the same HTML
             =======================================================================*/
+            
             getMainTop.style.display = "flex";
             getMainTop.style.flexDirection = "column";
             getMainTop.style.alignContent = "center";
@@ -261,6 +262,10 @@ const showNextQuestion = () =>{
             getMainTitle.style.marginTop = "60px";
             getHPTitle.style.fontSize = "65px";
             
+            if(window.innerWidth<600){
+                getScore.style.fontSize = "80px";
+                getScoreDiv.style.marginBottom = "150px";
+            }
         };
     });
 }
