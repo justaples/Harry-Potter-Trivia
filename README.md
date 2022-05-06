@@ -1,9 +1,19 @@
 # Harry Potter Trivia
 
-
 ### Description
 
 This is a trivia for all the Potterheads to test if they are Pure-blood, Half- Blood, or a Squib. This game is full of sounds effects and background songs. The player is shown a Harry Potter related question and 4 different possible answers on screen. There are a total of 10 questions and each correct answer awards 10 points. If the player gets 80 points or more, they're a Pure-Blood Potterhead, 50 to 70 points, they're considered a Half-Blood Potterhead, and 40 points or less they're a Squib. 
+
+### Getting Started
+
+https://justaples.github.io/project-js-game/
+
+- Instructions to player:
+    - Once the main page loads, hit start;
+    - You will see a total of 10 questions as you go through the next pages;
+    - Think before choosing an answer, once you select it, you can't change it;
+    - Each correct answer will award 10 points;
+    - The final result will be displayed at the final page;
 
 
 ### Screenshot of the game
@@ -16,21 +26,10 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 
 
 ### Technologies Used
+
 - HTML
 - CSS
 - JavaScript
-
-
-### Getting Started
-
-https://justaples.github.io/project-js-game/
-
-- Instructions to player:
-    - Once the main page loads, hit start;
-    - You will see a total of 10 questions as you go through the next pages;
-    - Think before choosing an answer, once you select it, you can't change it;
-    - Each correct answer will award 10 points;
-    - The final result will be displayed at the final page;
 
 
 ### User Stories
