@@ -23,7 +23,7 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 
 ### Getting Started
 
-- ********* post the link to deployed game *********
+https://justaples.github.io/project-js-game/
 
 - Instructions to player:
     - Once the main page loads, hit start;
