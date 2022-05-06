@@ -12,10 +12,26 @@ body {
     border: 5px solid black;
     border-radius: 5%;
     background-color: black;
-    border: 10px solid #D3A625;
-    box-shadow: 3px 3px 20px 20px #a27f1d;
     margin: auto;
     max-width: 800px;
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+/*=======================================================================
+Adding glwing effect to the border using css animation keyframe
+- Link referencing how to use animation
+    https://blog.stackfindover.com/css-glowing-effect/
+=======================================================================*/
+
+@keyframes glowing {
+   from{
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(251, 251, 119), 0 0 40px #9b0101, 0 0 50px #c7e600, 0 0 60px #f4facd, 0 0 70px #ffffff;
+   } 
+   to{
+    box-shadow: 0 0 20px #fff, 0 0 30px #a27f1d, 0 0 40px #a27f1d, 0 0 50px #a27f1d, 0 0 60px #a27f1d, 0 0 70px #a27f1d, 0 0 80px #a27f1d;
+  }
 }
 
 .main-title {
@@ -276,7 +292,6 @@ Adding style options for mobile devices with smaller screens
         max-width: 350px;
         max-height: 700px;
         border-radius: 10%;
-        box-shadow: 3px 3px 8px 8px #a27f1d;
     }
 
     .welcome-message{
@@ -333,7 +348,7 @@ Adding style options for mobile devices with smaller screens
     }
 
     .final-message{
-        font-size: 25px;
+        font-size: 15px;
     } 
     
     .hp-title{
