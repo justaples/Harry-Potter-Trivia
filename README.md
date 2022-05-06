@@ -5,7 +5,12 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 
 ### Screenshot of the game
 
-- ********* post screenshots here *************
+<IMG SRC = "./images/ReadmePics/Start Page of Trivia.png">
+<IMG SRC = "./images/ReadmePics/Questions page of trivia.png">
+<IMG SRC = "./images/ReadmePics/Eng page of trivia - High Score.png">
+<IMG SRC = "./images/ReadmePics/End page of trivia - Medium Score.png">
+<IMG SRC = "./images/ReadmePics/End page of trivia - Low Score.png">
+
 
 
 ### Technologies Used
@@ -58,7 +63,7 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 
 ### Wireframes
 
-<IMG SRC = "./images/UPLOAD THIS First Page - Trivia Question.png">
+<IMG SRC = "./images/ReadmePics/UPLOAD THIS First Page - Trivia Question.png">
 
 
 ### Unsolved problems 
