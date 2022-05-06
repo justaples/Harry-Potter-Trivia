@@ -174,7 +174,10 @@ const handleClick = (e) => {
     getResultContainer.classList.remove('hide');    
     
     /*=======================================================================
-    Adding removeEventListener to disable any clicking after choosing an answer, so that once a wrong question is selected, it won't allow you to choose a correct one afterwards, or if a correct answer is selected, it won't allow you to keep clicking and getting more point added to the score
+    Adding removeEventListener to disable any clicking after choosing an answer, 
+    so that once a wrong question is selected, it won't allow you to choose a
+    correct one afterwards, or if a correct answer is selected, 
+    it won't allow you to keep clicking and getting more point added to the score
     =======================================================================*/
     getAnswers.forEach(item =>{
         item.removeEventListener('click',
@@ -229,13 +232,13 @@ const showNextQuestion = () =>{
             /*=======================================================================
             Adding conditionals to display different messages and different songs according to the final score.
             =======================================================================*/
-            if(getScore.innerHTML >= 80){
+            if(getScore.innerHTML >= 90){
                 audioGoodEnd.play();
                 getFinalMessage.innerHTML = "<h2>Congratulations<br>You're a Pure-Blood Potterhead!!!</h2>";
-            }else if (getScore.innerHTML >=50 && getScore.innerHTML < 80){
+            }else if (getScore.innerHTML >=50 && getScore.innerHTML < 90){
                 audioGoodEnd.play();
                 getFinalMessage.style.fontSize = "15px";
-                getFinalMessage.innerHTML = "<h2>You are a Half-Blood Potterhead! <br>This calls for a Harry Potter movie marathon<br>to brush up on your knowledge!!</h2>";
+                getFinalMessage.innerHTML = "<h2>You are a Half-Blood Potterhead! <br>Better re-read the books<br>to brush up on your knowledge!!</h2>";
             }else{
                 audioBadEnd.play();
                 getFinalMessage.innerHTML = "<h2>You're a Squib!<br>Try again.</h2>";

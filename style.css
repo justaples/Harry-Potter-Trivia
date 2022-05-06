@@ -134,6 +134,13 @@ Adding style to each answer button separately and a hovr style for each option
     font-weight: bold;
 }
 
+.option1:focus {
+    background-color: #d90000;
+    box-shadow: 8px 8px #f7c437;
+    font-size: 45px;
+    font-weight: bold;
+}
+
 .option2 {
     background-color: #2A623D;
     border: 5px solid #AAAAAA;
@@ -142,6 +149,13 @@ Adding style to each answer button separately and a hovr style for each option
 .option2:hover {
     background-color: #3d8956;
     box-shadow: 3px 3px #c8c6c6;
+    font-weight: bold;
+}
+
+.option2:focus {
+    background-color: #3d8956;
+    box-shadow: 8px 8px #c8c6c6;
+    font-size: 45px;
     font-weight: bold;
 }
 
@@ -157,6 +171,13 @@ Adding style to each answer button separately and a hovr style for each option
     font-weight: bold;
 }
 
+.option3:focus {
+    background-color: #384c91;
+    box-shadow: 8px 8px #908f8f;
+    font-size: 45px;
+    font-weight: bold;
+}
+
 .option4 {
     color:black;
     background-color: #FFDB00;
@@ -166,6 +187,13 @@ Adding style to each answer button separately and a hovr style for each option
 .option4:hover {
     background-color: #fade26e4;
     box-shadow: 3px 3px #6d6c6c;
+    font-weight: bold;
+}
+
+.option4:focus {
+    background-color: #fade26e4;
+    box-shadow: 8px 8px #6d6c6c;
+    font-size: 45px;
     font-weight: bold;
 }
 
@@ -223,6 +251,7 @@ Adding display: none to the hide class to be applied later in JavaScript
     justify-content: space-evenly;
     align-self: center;
 }
+
 .welcome-message{
     display: flex;
     align-self: center;
@@ -325,17 +354,36 @@ Adding style options for mobile devices with smaller screens
         margin: 3px 15px 3px 15px;
         padding: 0px;
     }
+    
+    .option1:focus{
+        font-size: 30px;
+    }
+    
     .option2{
         margin: 3px 15px 3px 15px;
         padding: 0px;
     }
+    
+    .option2:focus{
+        font-size: 30px;
+    }
+    
     .option3{
         margin: 3px 15px 3px 15px;
         padding: 0px;
     }
+    
+    .option3:focus{
+        font-size: 30px;
+    }
+    
     .option4{
         margin: 3px 15px 3px 15px;
         padding: 0px;
+    }
+    
+    .option4:focus{
+        font-size: 30px;
     }
 
     .result-container{

@@ -1,7 +1,10 @@
 # Harry Potter Trivia
 
+
 ### Description
+
 This is a trivia for all the Potterheads to test if they are Pure-blood, Half- Blood, or a Squib. This game is full of sounds effects and background songs. The player is shown a Harry Potter related question and 4 different possible answers on screen. There are a total of 10 questions and each correct answer awards 10 points. If the player gets 80 points or more, they're a Pure-Blood Potterhead, 50 to 70 points, they're considered a Half-Blood Potterhead, and 40 points or less they're a Squib. 
+
 
 ### Screenshot of the game
 
@@ -12,11 +15,11 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 <IMG SRC = "./images/ReadmePics/End page of trivia - Low Score.png">
 
 
-
 ### Technologies Used
 - HTML
 - CSS
 - JavaScript
+
 
 ### Getting Started
 
@@ -52,14 +55,17 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
     -	As a player, I want to have up to 3 hints in the whole game, so that I can have a higher chance to win.
     -	As a player, with disability, I want to hear the questions and answers out loud as I hover over them with the mouse, so that I can play the game.
 
+
 ### Planned Future Enhacements
 
 - Add a button to turn sound effects on and off;
+- Disable the ability to focus on the answers after first answer is selected, so that another one doesn't get focused when clicked.
 - Add a button to the first page to show instructions;
 - Add difficulty level, so the player can choose between, easy, medium and hard;
 - Add a timer to each question;
 - Add the possibility to get hints to each question. A maximum of 3 hints per game;
 - Add accessibility for people with disability to the game, so the questions and answers are read out loud;
+
 
 ### Wireframes
 
@@ -70,7 +76,8 @@ This is a trivia for all the Potterheads to test if they are Pure-blood, Half- B
 
 - Randomizing questions when hitting "next" button
 
+
 ### Major hurdles
 
-- Disabling all the answer buttons after an answer has been selected. So the player can't cheat and get extra points or select the right answer after choosing the wrong one.
+- Disabling all the answer buttons after an answer has been selected. So the player can't cheat and get extra points or select the right answer after choosing the wrong one. Problem was fixed by adding a "removeEventListener" to the handleClick() function after a button is clicked.
     
